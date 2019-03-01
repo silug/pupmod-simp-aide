@@ -113,6 +113,27 @@ checks:
       disa_stig:
       - CCI-001744
       - SRG-OS-000363-GPOS-00150
+  oval:com.puppet.forge.simp.aide.enable.el6:
+    settings:
+      parameter: aide::enable
+      value: false
+    type: puppet-class-parameter
+    controls:
+      nist_800_53_rev4:SI-7: true
+      nist_800_53_rev4:SI-7:1: true
+      nist_800_53_rev4:SI-7:2: true
+      nist_800_53_rev4:SI-7:3: true
+      nist_800_53_rev4:SI-7:8: true
+    identifiers:
+      nist_800_53_rev4:
+      - SI-7
+      - SI-7:1
+      - SI-7:2
+      - SI-7:3
+      - SI-7:8
+    confine:
+      osfamily: RedHat
+      operatingsystemmajrelease: '6'
   oval:com.puppet.forge.simp.aide.aliases:
     settings:
       parameter: aide::aliases
@@ -170,6 +191,7 @@ checks:
       operatingsystemmajrelease: '7'
     oval-ids:
     - xccdf_org:ssgproject:content_rule_aide_periodic_cron_checking
+    - aide_periodic_cron_checking
   oval:com.puppet.forge.simp.aide.hour:
     settings:
       parameter: aide::hour
@@ -188,6 +210,7 @@ checks:
       operatingsystemmajrelease: '7'
     oval-ids:
     - xccdf_org:ssgproject:content_rule_aide_periodic_cron_checking
+    - aide_periodic_cron_checking
   oval:com.puppet.forge.simp.aide.minute:
     settings:
       parameter: aide::minute
@@ -206,6 +229,7 @@ checks:
       operatingsystemmajrelease: '7'
     oval-ids:
     - xccdf_org:ssgproject:content_rule_aide_periodic_cron_checking
+    - aide_periodic_cron_checking
   oval:com.puppet.forge.simp.aide.schedule:
     settings:
       parameter: aide::schedule
@@ -240,6 +264,7 @@ checks:
       operatingsystemmajrelease: '7'
     oval-ids:
     - xccdf_org:ssgproject:content_rule_aide_periodic_cron_checking
+    - aide_periodic_cron_checking
   oval:com.puppet.forge.simp.aide.enable.nist_800_53_rev4:
     settings:
       parameter: aide::enable
@@ -258,3 +283,6 @@ checks:
       - SI-7:2
       - SI-7:3
       - SI-7:8
+    confine:
+      osfamily: RedHat
+      operatingsystemmajrelease: '7'
